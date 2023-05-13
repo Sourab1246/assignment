@@ -54,7 +54,20 @@ class ProductsDetails(APIView):
             return JsonResponse(serializer.data)
         return JsonResponse(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
         
+        
 
+# class ProductsAPIView(APIView):
+#     def patch(self,request,id):
+#         try:
+#             products=Products.objects.get(id=id)
+#         except products.DoesNotExist:
+#             return JsonResponse(status=status.HTTP_404_NOT_FOUND)
+
+#         serializer=ProductsSerializer(products,data=request.data,partial=True)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return JsonResponse(serializer.data)
+#         return JsonResponse(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
 
 
